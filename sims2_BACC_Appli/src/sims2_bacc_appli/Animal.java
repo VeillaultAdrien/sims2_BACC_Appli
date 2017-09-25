@@ -5,6 +5,9 @@
  */
 package sims2_bacc_appli;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author adrie
@@ -13,14 +16,32 @@ public class Animal extends Sim {
     Boolean chien;
     Boolean chat;
     
+    
     //constructor
-    public void Animal(String nom, String prenom, int age, Boolean chien, Boolean chat, String etat){
-        super.nom = nom;
-        super.prenom = prenom;
-        super.age = age;
+    public void Animal(String nom, String prenom, int age, Boolean chien, Boolean chat, String etat) throws ChienChatException{
+        this.nom = nom;
+        this.prenom = prenom;
+        this.age = age;
         this.chien = chien;
         this.chat = chat;
         super.etat = etat;
+        try{
+            if (chien==true && chat==false){
+                this.listeEtats.add("Chiot");
+                this.listeEtats.add("Adulte");
+                this.listeEtats.add("Senior");
+            } else {
+                if (chat==true && chien==false){
+                    this.listeEtats.add("Chaton");
+                    this.listeEtats.add("Adulte");
+                    this.listeEtats.add("Senior");
+                } else throw new ChienChatException("chien et chat à la fois");
+            }
+        } catch (ChienChatException e){
+            System.out.println("Ne peut pas être un chien et un chat à la fois");
+        
+    }
+       
     }
     
     public void Animal(String nom, String prenom, int age, Boolean chien, Boolean chat, String etat, Boolean vivant){

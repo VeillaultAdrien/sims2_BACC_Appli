@@ -5,6 +5,9 @@
  */
 package sims2_bacc_appli;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author adrie
@@ -15,6 +18,7 @@ public abstract class Sim {
     int age;
     Boolean vivant;
     String etat;
+    List<String> listeEtats = new ArrayList<>();
     
     public abstract String faireVieillir();
 }

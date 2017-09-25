@@ -1,0 +1,2 @@
+Creer une nouvelle exception :
+http://anisfrikha.developpez.com/tutoriel/java/exceptions/
