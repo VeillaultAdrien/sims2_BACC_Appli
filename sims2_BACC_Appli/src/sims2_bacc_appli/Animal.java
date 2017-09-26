@@ -25,26 +25,25 @@ public class Animal extends Sim {
         this.chien = chien;
         this.chat = chat;
         super.etat = etat;
-        try{
-            if (chien==true && chat==false){
-                this.listeEtats.add("Chiot");
+        if (chien==true && chat==false){
+            this.listeEtats.add("Chiot");
+            this.listeEtats.add("Adulte");
+            this.listeEtats.add("Senior");
+        } else {
+            if (chat==true && chien==false){
+                this.listeEtats.add("Chaton");
                 this.listeEtats.add("Adulte");
                 this.listeEtats.add("Senior");
-            } else {
-                if (chat==true && chien==false){
-                    this.listeEtats.add("Chaton");
-                    this.listeEtats.add("Adulte");
-                    this.listeEtats.add("Senior");
-                } else throw new ChienChatException("chien et chat à la fois");
-            }
-        } catch (ChienChatException e){
-            System.out.println("Ne peut pas être un chien et un chat à la fois");
+            } else throw new ChienChatException("chien et chat à la fois"); //exception sera gérer au niveau de l'affichage
+        }
+        
         
     }
        
-    }
     
-    public void Animal(String nom, String prenom, int age, Boolean chien, Boolean chat, String etat, Boolean vivant){
+
+    
+    public void Animal(String nom, String prenom, int age, Boolean chien, Boolean chat, String etat, Boolean vivant) throws ChienChatException{
         this.nom = nom;
         this.prenom = prenom;
         this.age = age;
@@ -52,6 +51,17 @@ public class Animal extends Sim {
         this.chat = chat;
         this.etat = etat;
         this.vivant = vivant;
+        if (chien==true && chat==false){
+               this.listeEtats.add("Chiot");
+               this.listeEtats.add("Adulte");
+               this.listeEtats.add("Senior");
+           } else {
+               if (chat==true && chien==false){
+                   this.listeEtats.add("Chaton");
+                   this.listeEtats.add("Adulte");
+                   this.listeEtats.add("Senior");
+               } else throw new ChienChatException("chien et chat à la fois"); //exception sera gérer au niveau de l'affichage
+           }
     }
     
     //setter
@@ -87,6 +97,6 @@ public class Animal extends Sim {
     
     @Override
     public String faireVieillir(){
-        
+        //compraison de l'etat contenu dans l'attribut etat et remplacer par l'etat sup
     }
 }

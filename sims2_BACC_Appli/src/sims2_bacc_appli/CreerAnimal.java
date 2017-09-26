@@ -11,7 +11,7 @@ package sims2_bacc_appli;
  */
 public class CreerAnimal {
     
-    static public Animal creerAnimal(String nom, String prenom, int age, Boolean chien, Boolean chat, String etat){
+    static public Animal creerAnimal(String nom, String prenom, int age, Boolean chien, Boolean chat, String etat) throws ChienChatException{
         Animal animal = new Animal();
         animal.setNom(nom);
         animal.setPrenom(prenom);
@@ -21,7 +21,7 @@ public class CreerAnimal {
         animal.setEtat(etat);
     }
     
-     static public Animal creerAnimal(String nom, String prenom, int age, Boolean chien, Boolean chat, String etat, Boolean vivant){
+     static public Animal creerAnimal(String nom, String prenom, int age, Boolean chien, Boolean chat, String etat, Boolean vivant) throws ChienChatException{
         Animal animal = new Animal();
         animal.setNom(nom);
         animal.setPrenom(prenom);

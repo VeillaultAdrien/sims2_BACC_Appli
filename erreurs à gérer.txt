@@ -1,0 +1,10 @@
+Gestion des exptions :
+* ne pas être un chien et un chat à la fois
+
+* une seule famille active
+
+* sim ne peut pas être dans deux familles à la fois
+
+* terrain ne peut pas être possédé par deux familles
+
+* pas deux humains dans les métiers obligatoires
